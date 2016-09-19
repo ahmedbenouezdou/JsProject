@@ -8,7 +8,7 @@
 **/npm-debug
 
 AngularJS/src/js
-
-angular2/app/*.js
+angular2/src/app/*.js
 angular2/**/*.map
+
 
