@@ -1,48 +1,98 @@
+<section class="well form-inline">
+    <input type="text" class="form-control" style="width: 40%" placeholder="Search" ng-model="search" aria-describedby="sizing-addon1">
+    <section class="pull-right">
+        <button class="btn btn-info" ng-click="trier()" ng-show="!tableView"><span
+                class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span></button>
+        <button class="btn btn-info" ng-click="trier()" ng-show="tableView"><span
+                class="glyphicon glyphicon glyphicon-th-list" aria-hidden="true"></span></button>
+    </section>
+</section>
+
 <div class="row">
     <div class="col-xs-12 col-md-12 col-lg-12">
-
         <div class="row">
             <from>
-                <div class="col-xs-6 col-md-3 col-lg-4" ng-repeat="list in listBook">
-                    <div class="panel panel-primary">
 
-                        <div class="panel-heading"> {{list.title}} <span class="badge"> {{list.price}}<samp
-                                class="glyphicon glyphicon-euro"></samp></span></div>
-                        <div class="panel-body">
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <center><img class="media-object" ng-src="{{list.cover}}"
-                                                 style="width:170px; height:220px; border:none;    margin-left: 46%;">
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="input-group">
-                                        <span class="input-group-addon" id="sizing-addon2">Quantité:</span>
-                                        <input type="number" class="form-control" name="input"
-                                               ng-model="quantite[$index]" min="0" max="99" required
-                                               ng-change="activePanier($index)">
+                <div ng-switch on="tableView">
+                    <ul class="media-list " ng-switch-when="false" >
+
+                        <li class="media col-xs-6 col-md-3 col-lg-12"  ng-repeat="list in listBook ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading"> {{list.title}} <span class="badge"> {{list.price}}<samp
+                                            class="glyphicon glyphicon-euro"></samp></span></div>
+                                    <div class="panel-body">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img ng-src="{{list.cover}}"  style="width:170px; height:220px; border:none;" class="span2">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <p><b>Auteur : </b></p>
+                                            <p><b>Genre : </b></p>
+                                            <p><b>Résumé : </b> </p>
+                                            <p><b>Prix : </b> </p>
+                                            <p><b>Note : </b> </p>
+                                            <div class="col-lg-offset-9 input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Quantité:</span>
+                                                <input type="number" class="form-control" name="input"
+                                                       ng-model="quantite[$index]" min="0" max="99" required
+                                                       ng-change="activePanier($index)">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="button" ng-disabled="list.disable"
                                                     ng-click="addPanier($index)"><span
                                                     class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                                             </button>
                                          </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </li>
+                    </ul>
+
+                    <div class="col-xs-6 col-md-3 col-lg-4" ng-switch-default ng-repeat="list in listBook">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-heading"> {{list.title}} <span class="badge"> {{list.price}}<samp
+                                    class="glyphicon glyphicon-euro"></samp></span></div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <center><img class="media-object" ng-src="{{list.cover}}"
+                                                     style="width:170px; height:220px; border:none;    margin-left: 46%;">
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="sizing-addon2">Quantité:</span>
+                                            <input type="number" class="form-control" name="input"
+                                                   ng-model="quantite[$index]" min="0" max="99" required
+                                                   ng-change="activePanier($index)">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" ng-disabled="list.disable"
+                                                    ng-click="addPanier($index)"><span
+                                                    class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                            </button>
+                                         </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
             </from>
         </div>
     </div>
 </div>
-
 
 
