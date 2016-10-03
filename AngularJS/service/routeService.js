@@ -2,46 +2,53 @@
 
 exports.getAllList = function getAllList(req, response) {
 
-    var listBookServer= [
+    var listBookServer = [
         {
             "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
-            "title": "Henry Potter à l'école des sorciers",
+            "title": "Harry Potter à l'école des sorciers",
             "price": 35,
-            "cover": "http://localhost:8085//img/hp0.jpg"
+            "cover": "http://localhost:8085//img/hp0.jpg",
+            "auteur": "J. K. Rowling",
+            genre: "Roman Fantasy",
+            resume: "Le jour de ses onze ans, Harry Potter, un orphelin élevé par un oncle et une tante qui le détestent," +
+            "voit son existence bouleversée. Un géant vient le chercher pour l'emmener à Poudlard, la célèbre école de " +
+            "sorcellerie où une place l'attend depuis toujours. Voler sur des balais, jeter des sorts, combattre " +
+            "les Trolls : Harry Potter se révèle un sorcier vraiment doué. Mais quel mystère entoure donc " +
+            "sa naissance et qui est l'effroyable V..., le mage dont personne n'ose prononcer le nom ?"
         },
         {
             "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
-            "title": "Henry Potter et la Chambre des secrets",
+            "title": "Harry Potter et la Chambre des secrets",
             "price": 30,
             "cover": "http://localhost:8085/img/hp1.jpg"
         },
         {
             "isbn": "fcd1e6fa-a63f-4f75-9da4-b560020b6acc",
-            "title": "Henry Potter et le Prisonnier d'Azkaban",
+            "title": "Harry Potter et le Prisonnier d'Azkaban",
             "price": 30,
             "cover": "http://localhost:8085/img/hp2.jpg"
         },
         {
             "isbn": "c30968db-cb1d-442e-ad0f-80e37c077f89",
-            "title": "Henry Potter et la Coupe de feu",
+            "title": "Harry Potter et la Coupe de feu",
             "price": 29,
             "cover": "http://localhost:8085/img/hp3.jpg"
         },
         {
             "isbn": "78ee5f25-b84f-45f7-bf33-6c7b30f1b502",
-            "title": "Henry Potter et l'Ordre du phénix",
+            "title": "Herry Potter et l'Ordre du phénix",
             "price": 28,
             "cover": "http://localhost:8085/img/hp4.jpg"
         },
         {
             "isbn": "cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6",
-            "title": "Henry Potter et le Prince de sang-mélé",
+            "title": "Harry Potter et le Prince de sang-mélé",
             "price": 30,
             "cover": "http://localhost:8085/img/hp5.jpg"
         },
         {
             "isbn": "bbcee412-be64-4a0c-bf1e-315977acd924",
-            "title": "Henry Potter et les Reliques de la Mort",
+            "title": "Harry Potter et les Reliques de la Mort",
             "price": 35,
             "cover": "http://localhost:8085/img/hp6.jpg"
         }
@@ -49,8 +56,6 @@ exports.getAllList = function getAllList(req, response) {
 
     response.end(JSON.stringify(listBookServer));
 };
-
-
 
 
 exports.getOffre = function getOffre(req, response) {
@@ -94,15 +99,15 @@ exports.getOffre = function getOffre(req, response) {
             }
         ]
     }];
-    var nbIdIsbn=req.params.idisbn.split(",").length;
-   if(nbIdIsbn==1){
-       response.end(JSON.stringify(offreBook[2]));
-    }else{
-        if(nbIdIsbn>1 && nbIdIsbn<4){
+    var nbIdIsbn = req.params.idisbn.split(",").length;
+    if (nbIdIsbn == 1) {
+        response.end(JSON.stringify(offreBook[2]));
+    } else {
+        if (nbIdIsbn > 1 && nbIdIsbn < 4) {
             response.end(JSON.stringify(offreBook[1]));
 
-        }else{
-            if(nbIdIsbn>3){
+        } else {
+            if (nbIdIsbn > 3) {
                 response.end(JSON.stringify(offreBook[0]));
             }
         }
