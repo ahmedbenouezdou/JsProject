@@ -5,7 +5,6 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
 
     function init() {
         BooksListService.initListBookServer();
-        // $scope.listBook = BooksListService.getList();
         $scope.panier = [];
         $scope.quantite = {};
         $scope.tableView = true;
@@ -28,9 +27,7 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
                     })
                 });
             }
-
             $scope.listBook = dataBook;
-
 
         });
 
@@ -38,8 +35,6 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
     }
 
     $scope.addPanier = function (index) {
-        //index par rapport a la liste des produits et pas par rapport a $rootscope
-
         var existe = true;
         var position = 0;
         for (var j = 0; j < $scope.panier.length; j++) {
@@ -90,7 +85,7 @@ angular.module('bookModule').service('BooksListService', function ($http, $q) {
         var deferred = $q.defer();
 
         $http.get('listBook/').then(function (data) {
-                listBookServer = data.data
+                listBookServer = data.data;
                 deferred.resolve(data.data);
             },
             function (httpError) {
