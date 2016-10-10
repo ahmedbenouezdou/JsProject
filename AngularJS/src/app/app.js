@@ -9,7 +9,11 @@ app.config(function ($routeProvider) {
         }). when('/panier', {
             templateUrl : 'app/panier/panier.html',
             controller:'panierCtrl'
-
+        }). when('/inscription', {
+            templateUrl : 'app/inscription/inscription.html',
+            controller:'inscriptionCtrl'
+        }). when('/login', {
+            template:'<login></login>'
         }).otherwise({
             redirectTo: '/'
         });
