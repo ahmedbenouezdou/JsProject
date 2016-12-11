@@ -13,7 +13,7 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
             $scope.panier = OffreService.nombreProduit();
 
             dataBook.forEach(function (elementBook, indexBook) {
-                $scope.quantite[indexBook] = 0;
+                elementBook.quantite = 0;
                 elementBook.disable = true;
             });
 
@@ -21,7 +21,7 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
                 dataBook.forEach(function (elementBook, indexBook) {
                     $scope.panier.forEach(function (elementPanier) {
                         if (angular.equals(elementPanier.book.isbn, elementBook.isbn)) {
-                            $scope.quantite[indexBook] = elementPanier.quantiteBook;
+                            elementBook.quantite = elementPanier.quantiteBook;
                             elementBook.disable = true;
                         }
                     })
@@ -62,7 +62,7 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
     };
 
     $scope.activePanier = function activePanier(index) {
-        if ($scope.quantite[index] === 0) {
+        if ($scope.listBook[index].quantite === 0) {
             $scope.listBook[index].disable = true;
         } else {
             $scope.listBook[index].disable = false;

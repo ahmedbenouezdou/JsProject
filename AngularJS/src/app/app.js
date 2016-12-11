@@ -1,4 +1,4 @@
-var app=angular.module("angularJS1toAngular2BeeZen",['ngRoute','bookModule','ngCookies','panierModule']);
+var app=angular.module("angularJS1toAngular2BeeZen",['ngRoute','bookModule','ngCookies','panierModule','loginModule']);
 
 
 app.config(function ($routeProvider) {

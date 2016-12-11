@@ -104,7 +104,7 @@ gulp.task('index', function () {
 // Watch Files For Changes
 gulp.task('watch', function () {
     gulp.watch('src/scss/**/*.scss', ['styles']);
-    gulp.watch(['./src/app/**/*.js', './src/css/**/*.css', './src/**/*.html'], ['index']);
+    gulp.watch(['./src/app/**/*.*.js', './src/css/**/*.css', './src/**/*.html'], ['index']);
     gulp.watch('./application/back/**/*.js', ['server']);
 });
 
@@ -114,7 +114,7 @@ gulp.task('server', function () {
     // Start the server at the beginning of the task
     server.run(['server.js']);
 
-    gulp.watch(['./src/app/**/*.js', './application/back/**/*.js', './src/css/**/*.css', './src/**/*.html'], server.notify);
+    gulp.watch(['./src/app/**/*.*.js', './application/back/**/*.js', './src/css/**/*.css', './src/**/*.html'], server.notify);
 
     gulp.watch('src/scss/**/*.scss', ['styles']);
     gulp.watch(['server.js'], [server.run]);
