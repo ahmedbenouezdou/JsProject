@@ -1,6 +1,13 @@
 .idea
 
-**/.idea
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+# dependencies
+
 **/node_modules
 **/libs
 **/bower_components
@@ -8,7 +15,28 @@
 **/npm-debug
 
 AngularJS/src/js
+angular2_old/src/app/*.js
+angular2_old/**/*.map
+
 angular2/src/app/*.js
 angular2/**/*.map
 
+**/dist
+**/tmp
 
+# misc
+**/.sass-cache
+**/connect.lock
+**/coverage/*
+**/libpeerconnection.log
+***/npm-debug.log
+**/testem.log
+**/typings
+
+# e2e
+**/e2e/*.js
+**/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
