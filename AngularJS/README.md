@@ -1,7 +1,7 @@
 # AngularJs
-
-                          *** AngularJs exemple project  ***
-**********************************
+<center>
+                            *** AngularJs exemple project  ***
+</center>
 <p>bower i</p>
 <p>npm i</p>
 <p>gulp</p>
