@@ -1,8 +1,9 @@
 # AngularJs
 
+*** AngularJs exemple project  ***
+**********************************
+<p>bower i</p>
+<p>npm i</p>
+<p>gulp</p>
 
-bower i
-npm i
-gulp
-
-http://localhost:8085/
+<p>http://localhost:8085/</p>
