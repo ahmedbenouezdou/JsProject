@@ -1,6 +1,6 @@
 # AngularJs
 
-*** AngularJs exemple project  ***
+                          *** AngularJs exemple project  ***
 **********************************
 <p>bower i</p>
 <p>npm i</p>
