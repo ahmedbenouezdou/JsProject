@@ -43,7 +43,7 @@ angular.module('panierModule').service('OffreService', function (calculRemise, l
     this.calculTotal = function (produit) {
         var totalPanier = 0;
         for (var i = 0; i < produit.length; i++) {
-            totalPanier = totalPanier + (produit[i].book.price * produit[i].quantiteBook)
+            totalPanier = totalPanier + (produit[i].book.price * produit[i].book.quantite)
         }
         return totalPanier;
     };

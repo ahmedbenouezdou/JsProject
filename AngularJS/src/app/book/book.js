@@ -47,7 +47,6 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
         if (existe) {
             $scope.panier.push({
                 'book': BooksListService.getArticle(index),
-                'quantiteBook': $scope.quantite[index]
             });
             $cookieStore.put('listAddPanier', $scope.panier);
         } else {

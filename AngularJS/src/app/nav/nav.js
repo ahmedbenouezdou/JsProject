@@ -1,9 +1,10 @@
-angular.module('angularJS1toAngular2BeeZen').controller('navCrt', function ($scope, OffreService) {
+angular.module('angularJSBeeZen').controller('navCrt', function ($scope, OffreService) {
 
     $scope.$watch(function () {
             return OffreService.nombreProduit();
         },
         function(newVal) {
+            console.log(newVal);
             $scope.panier = newVal;
 
         }, true);

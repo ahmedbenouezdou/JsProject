@@ -23,9 +23,9 @@
 
             <tr ng-if="!affichePanier.length.$isEmpty" ng-repeat="listBooks in panier">
                 <td>{{listBooks.book.title}}</td>
-                <td style="text-align: center;">{{listBooks.quantiteBook}}</td>
+                <td style="text-align: center;">{{listBooks.book.quantite}}</td>
                 <td style="text-align: center;">{{listBooks.book.price}}</td>
-                <td style="text-align: center;">{{listBooks.book.price * listBooks.quantiteBook}} <samp class="glyphicon glyphicon-euro"></samp></td>
+                <td style="text-align: center;">{{listBooks.book.price * listBooks.book.quantite}} <samp class="glyphicon glyphicon-euro"></samp></td>
                 <td style="text-align: center;"><a ng-click="remove($index)"><samp class="glyphicon glyphicon-trash"></samp></a></td>
             </tr>
             <tr  ng-if="affichePanier.length.$isEmpty">
