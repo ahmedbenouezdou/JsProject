@@ -18,10 +18,10 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
             });
 
             if ($scope.panier.length != 0) {
-                dataBook.forEach(function (elementBook, indexBook) {
+                dataBook.forEach(function (elementBook) {
                     $scope.panier.forEach(function (elementPanier) {
                         if (angular.equals(elementPanier.book.isbn, elementBook.isbn)) {
-                            elementBook.quantite = elementPanier.quantiteBook;
+                            elementBook.quantite = elementPanier.book.quantite;
                             elementBook.disable = true;
                         }
                     })
@@ -46,13 +46,13 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
         //si l'article n'existe pas on ajoute dans le panier
         if (existe) {
             $scope.panier.push({
-                'book': BooksListService.getArticle(index),
+                'book': BooksListService.getArticle(index)
             });
             $cookieStore.put('listAddPanier', $scope.panier);
         } else {
             //sinon si l'article existe modifier quantite
-            if (!angular.equals($scope.panier[position].quantiteBook, $scope.quantite[index])) {
-                $scope.panier[position].quantiteBook = $scope.quantite[index];
+            if (!angular.equals($scope.panier[position].quantite, $scope.quantite[index])) {
+                $scope.panier[position].quantite = $scope.quantite[index];
                 $cookieStore.put('listAddPanier', $scope.panier);
 
             }
@@ -98,9 +98,6 @@ angular.module('bookModule').service('BooksListService', function ($http, $q) {
         return listBookServer[index];
     };
 
-    this.getList = function getList() {
-        return listBookServer;
-    };
 
     this.initListBookServer = function initListBookServer() {
         listBookServer = [];
