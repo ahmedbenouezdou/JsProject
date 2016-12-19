@@ -16,9 +16,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/') }"><a href="#/">Accueil</a></li>
-                <li class="dropdown" ng-class="{ active: isActive('/panier') }">
-                    <a href="#/panier"><span class="glyphicon glyphicon-shopping-cart"></span>Mon panier
+                <li ui-sref-active="active"><a ui-sref="home">Accueil</a></li>
+                <li class="dropdown" ui-sref-active="active">
+                    <a ui-sref="panier"><span class="glyphicon glyphicon-shopping-cart"></span>Mon panier
                         {{panier.length}}
                         <span ng-if="panier.length<2">article</span>
                         <span ng-if="panier.length>1">articles</span>
@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/login"><span  class="glyphicon glyphicon glyphicon-user"></span></a></li>
+                <li ui-sref-active="active"><a ui-sref="login"><span  class="glyphicon glyphicon glyphicon-user"></span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

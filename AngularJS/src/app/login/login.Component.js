@@ -5,7 +5,7 @@ angular.module('loginModule').component('login', {
     controller: function loginCtrl() {
         var ctrl=this;
 
-
+console.log("je suis la");
         ctrl.message = "";
 
         ctrl.user = {
