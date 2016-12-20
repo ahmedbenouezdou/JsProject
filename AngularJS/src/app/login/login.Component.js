@@ -1,7 +1,7 @@
 angular.module('loginModule', ['inscriptionModule']);
 
 angular.module('loginModule').component('login', {
-    templateUrl: 'app/login/login.html',
+
     controller: function loginCtrl() {
         var ctrl=this;
 
