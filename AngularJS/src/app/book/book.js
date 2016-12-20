@@ -12,7 +12,7 @@ angular.module('bookModule').controller('bookCrt', function ($scope, BooksListSe
 
             $scope.panier = OffreService.nombreProduit();
 
-            dataBook.forEach(function (elementBook, indexBook) {
+            dataBook.forEach(function (elementBook) {
                 elementBook.quantite = 0;
                 elementBook.disable = true;
             });
