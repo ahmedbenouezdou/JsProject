@@ -1,23 +1,30 @@
-angular.module('inscriptionModule', []);
-
-angular.module('inscriptionModule').component('inscription', {
-    templateUrl: 'app/inscription/inscription.html',
-    controller: function loginCtrl() {
-        var ctrl=this;
 
 
-        ctrl.message = "";
+const inscription = {
+    templateURL:'./inscription.html',
+    controller: function () {
 
-        ctrl.user = {
-            username: "",
-            password: "",
-            confirmPassword: "",
-            email:""
-        };
+        constructor(){
+        }
 
-        ctrl.submitForm=function submitForm(){
-            console.log(ctrl.user);
+        init(){
+            this.message = "";
 
+            this.user = {
+                username: "",
+                password: "",
+                confirmPassword: "",
+                email:""
+            };
+        }
+
+        submitForm(){
+            console.log(this.user);
         }
     }
-});
+};
+
+
+
+angular.module('inscriptionModule')
+    .component('inscription', inscription);

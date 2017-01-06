@@ -11,9 +11,6 @@ angular.module('angularJSBeeZen').controller('navCrt', function ($scope, OffreSe
 
 
     $scope.isActive = function (viewLocation) {
-        console.log(viewLocation);
-        console.log($location.path() );
-
         var active = (viewLocation === $location.path());
         return active;
     };
