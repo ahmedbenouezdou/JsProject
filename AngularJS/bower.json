@@ -1,7 +1,7 @@
 {
-    "name": "angularJS",
-    "description": "AngularJS1toAngular2",
-    "version": "0.1.0",
+    "name": "AngularJS example project",
+    "description": "AngularJS example project",
+    "version": "1.0",
     "homepage": "",
     "license": "",
     "private": true,
