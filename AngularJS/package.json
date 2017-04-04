@@ -1,6 +1,6 @@
 {
-  "name": "AngularJS exemple project",
-  "version": "0.1.0",
+  "name": "AngularJS example project",
+  "version": "1.0",
   "description": "AngularJS1toAngular2",
   "dependencies": {
     "body-parser": "^1.6.2",
