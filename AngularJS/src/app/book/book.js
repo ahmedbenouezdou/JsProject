@@ -83,7 +83,7 @@ angular.module('bookModule').service('BooksListService', function ($http, $q) {
     this.setList = function setList() {
         var deferred = $q.defer();
 
-        $http.get('listBook/').then(function (data) {
+        $http.get('/listBook').then(function (data) {
                 listBookServer = data.data;
                 deferred.resolve(data.data);
             },
